@@ -151,35 +151,36 @@ void twoDimensionalArrays() {
         for (int c = 0; c < cols; ++c) {
             flat[r * cols + c] = (r * cols) + c + 1;
         }
-
-        // TODO: Print the flat array as a 2D grid using the index formula
-        // Expected output:
-        //   Flat array as 2D:
-        //     Row 0: 1 2 3 4
-        //     Row 1: 5 6 7 8
-        //     Row 2: 9 10 11 12
-        std::cout << "Flat array as 2D:" << '\n';
-
-        for (int r = 0; r < rows; ++r) {
-            std::cout << "  Row " << r << ": ";
-            for (int c = 0; c < cols; ++c) {
-                std::cout << flat[r * cols + c] << " ";
-            }
-            std::cout << '\n';
-        }
-
-        // TODO: Free the flat array with delete[] and set to nullptr
-
-        std::cout << "Flat array freed (just one delete[]!)" << '\n';
-
-        delete[] flat;
-        flat = nullptr;
-
-        // ! DISCUSSION: Which approach is better?
-        //   For most purposes, the flat array is preferred:
-        //     - One allocation, one deallocation
-        //     - Contiguous memory (cache-friendly)
-        //     - Simpler cleanup
-        //   The pointer-to-pointer approach is useful when rows have
-        //   different lengths (a "jagged array"), but that's uncommon.
     }
+
+    // TODO: Print the flat array as a 2D grid using the index formula
+    // Expected output:
+    //   Flat array as 2D:
+    //     Row 0: 1 2 3 4
+    //     Row 1: 5 6 7 8
+    //     Row 2: 9 10 11 12
+    std::cout << "Flat array as 2D:" << '\n';
+
+    for (int r = 0; r < rows; ++r) {
+        std::cout << "  Row " << r << ": ";
+        for (int c = 0; c < cols; ++c) {
+            std::cout << flat[r * cols + c] << " ";
+        }
+        std::cout << '\n';
+    }
+
+    // TODO: Free the flat array with delete[] and set to nullptr
+
+    std::cout << "Flat array freed (just one delete[]!)" << '\n';
+
+    delete[] flat;
+    flat = nullptr;
+
+    // ! DISCUSSION: Which approach is better?
+    //   For most purposes, the flat array is preferred:
+    //     - One allocation, one deallocation
+    //     - Contiguous memory (cache-friendly)
+    //     - Simpler cleanup
+    //   The pointer-to-pointer approach is useful when rows have
+    //   different lengths (a "jagged array"), but that's uncommon.
+}
